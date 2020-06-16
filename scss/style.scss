@@ -1,0 +1,208 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(120deg, #e2c35d, #d88771);
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  color: #fff;
+}
+
+header,
+form{
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header{
+  font-size: 1.5rem;
+  // background: #d88771;
+  height: 15vh;
+  margin-bottom: 1rem;
+}
+
+h2{
+  text-align: center;
+}
+
+
+
+form input,
+form button{
+  padding: 0.5rem;
+  font-size:2rem;
+  border: none;
+  background: white;
+}
+
+form button{
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover{
+    background: #d88771;
+    color: white;
+  }
+}
+
+.todo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .todo-list{
+    width: 350px;
+    list-style: none;
+    min-height: 160px;
+
+    h2{
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+
+   .todo{
+    background: #fff; 
+    margin: 0.5rem;
+    color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease-out;
+
+    li{
+      flex: 1;
+      font-size: 1.2rem;
+      padding: 0 0.5rem;
+    }
+
+    button{
+      background: coral;
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+
+      i{
+        pointer-events: none;
+      }
+    }
+    .completed-btn{
+      background: rgb(39, 224, 70);
+    }
+   }
+  }
+}
+.completed{
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.fall{
+  // transform: translateY(8rem) rotate(25deg);;
+  opacity: 0;
+}
+
+.select{
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  width: 30%;
+  margin: 2rem auto;
+
+  select {
+    appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: coral;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  &::after{
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: coral;
+    padding: 0.5rem;
+    pointer-events: none;
+  }
+}
+
+a{
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 1.5rem auto;
+  width:25%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media (max-width: 500px){
+  header{
+    font-size: 1rem;
+    text-align: center; 
+  }
+  form{
+    min-height: 10vh;
+
+    input{
+    width: 70%;
+
+    }
+  }
+  .select {
+    text-align: center;
+    width: 60%;
+    margin: 2rem auto;
+
+    select {
+      width: 100%;
+      font-size: 1rem;
+
+      option{
+        font-size: smaller;
+        width: 50%;
+      }
+    }
+  }
+  .todo-container .todo-list {
+    min-height: 300px;
+  }
+}
